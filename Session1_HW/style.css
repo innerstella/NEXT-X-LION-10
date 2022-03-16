@@ -1,0 +1,76 @@
+*{
+    font-family:'SUIT', sans-serif;
+}
+body{
+    margin: 0 auto;
+    background-color: rgb(237, 244, 248);
+}
+
+main{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    background: rgba(212, 234, 247, 100);
+    width: 100%;
+    padding: 10px;
+}
+
+#profile{
+    position:relative;
+    top: 50px;
+}
+
+#header{
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+}
+p.list{
+    font-size: 15px;
+    text-align: center;
+}
+
+
+button{
+    border: 2px solid;
+    padding: 5px;
+    margin: 2px;
+    border-color: rgba(212, 234, 247, 100);
+    background-color: rgb(255, 255, 255);
+}
+
+#link{
+    color:black;
+    text-decoration-line: none;
+}
+
+info1 {
+    text-align: center;
+    line-height: 20px;
+    position: relative;
+    top: 40px;
+    font-size: 13px;
+    padding: 20px;
+}
+
+info2{
+    position:fixed;
+    left: 300px;
+    padding-left: 250px;
+    padding-top: 30px;
+}
+
+info3 {
+    position:fixed;
+    left: 100px;
+    padding-left: 250px;
+    padding-top: 30px;
+}
+
+info4{
+    position:fixed;
+    left: 550px;
+    padding-left: 250px;
+    padding-top: 30px;
+    
+}
