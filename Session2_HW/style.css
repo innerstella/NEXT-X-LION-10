@@ -16,12 +16,22 @@ header{
     justify-content: center;
 }
 
+img#feed{
+    display: flex;
+    float: left;
+    height: 90px !important;
+    width: 90px  !important;
+    border: 5px solid white;
+    
+}
+
+
 #profile{
-    width: 300px;
+    width: 300px; 
     height: 60px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
 }
 
@@ -46,7 +56,6 @@ p.info{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
 }
 
 p.button{
@@ -58,7 +67,7 @@ p.button{
 
 .profilepic{
     width : 60px !important;
-
+    border-radius: 70%;
 }
 
 .number{
@@ -90,23 +99,17 @@ following{
     text-align:center
     
 }
-/*
-p.number{
-    float: left;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    position:relative;
-    top: 10px;
+
+
+
+feed_icon{
+    display: flex;
+    justify-content: space-evenly;
 }
 
-p.number_explain{
-    float: left;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 15px;
-    font-size: 10px;
-    position: relative;
-    top: -10px;
+.footer_icon{
+    padding-top: 10px;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
 }
-*/
