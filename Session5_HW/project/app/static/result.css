@@ -1,0 +1,21 @@
+*{
+    font-family: 'SUIT', sans-serif;
+}
+
+
+board{
+    border: 2px solid rgb(133, 133, 133);
+    background-color: rgb(226, 147, 147);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width : 330px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+p#result{
+    margin: 1px;
+    font-size: 12px;
+}
