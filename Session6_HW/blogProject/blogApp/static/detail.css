@@ -1,0 +1,20 @@
+*{
+    font-family: 'SUIT', sans-serif;
+}
+
+p#page_title{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+p#list{
+    font-size: 5px;
+    position: relative;
+    top: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+    <link href="http://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="page_title">상세 페이지</p>
+    <div>
+        <p id="title">📌 제목</p>
+        <div>{{ article.title }}</div>
+    </div>
+    <div>
+        <p id="content">📜 내용</p>
+        <div>{{ article.content }}</div>
+    </div>
+    <div>
+        <p id="time">⌚ 작성 시각</p>
+        <div>{{ article.edittime }}</div>
+    </div>
+    <div>
+        <p>🗃 카테고리</p>
+        <div>{{ article.category }}</div>
+    </div>
+    <a href="{% url 'list' %}">
+        <p id="list">전체 목록</p>
+    </a>
+</body>
+</html>
