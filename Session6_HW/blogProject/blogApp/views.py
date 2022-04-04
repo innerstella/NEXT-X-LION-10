@@ -19,7 +19,12 @@ def new(request):
 
 def list(request):
     articles = Article.objects.all()
-    return render(request, 'list.html', {'articles': articles})
+    count = len(articles)
+    hobby_count = Article.objects.filter(category='1').count()
+    food_count = Article.objects.filter(category='2').count()
+    programming_count = Article.objects.filter(category='3').count()
+
+    return render(request, 'list.html', {'articles': articles, 'count': count, 'hobby_count': hobby_count, 'food_count': food_count, 'programming_count': programming_count})
 
 
 def detail(request, article_id):
@@ -29,14 +34,19 @@ def detail(request, article_id):
 
 def hobby(request):
     articles = Article.objects.all()
-    return render(request, 'hobby.html', {'articles': articles})
+    count = len(articles)
+    return render(request, 'hobby.html',
+                  {'articles': articles, 'count': count})
 
 
 def food(request):
     articles = Article.objects.all()
-    return render(request, 'food.html', {'articles': articles})
+    count = len(articles)
+    return render(request, 'food.html', {'articles': articles, 'count': count})
 
 
 def programming(request):
     articles = Article.objects.all()
-    return render(request, 'programming.html', {'articles': articles})
+    count = len(articles)
+
+    return render(request, 'programming.html', {'articles': articles, 'count': count})

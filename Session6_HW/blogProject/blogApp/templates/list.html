@@ -12,12 +12,25 @@
 </head>
 <body>
     <h2>카테고리</h2>
-    
-    <a href="{% url  'new' %}">✍ 글 쓰러 가기 ✍</a><br>
 
-    <a href="{% url 'hobby' %}">취미</a><br>
-    <a href="{% url 'food' %}">음식</a><br>
-    <a href="{% url 'programming' %}">프로그래밍</a>
+
+    <a href="{% url 'hobby' %}">🎠 취미
+            ({{ hobby_count }})
+    </a>
+    <br>
+    <a href="{% url 'food' %}">🍲 음식 
+        ({{ food_count }})
+    </a><br>
+    <a href="{% url 'programming' %}">💻 프로그래밍
+        ({{ programming_count }})
+    </a>
+    <br>
+    <br>
+    <br>
+
+    <a href="{% url  'new' %}">
+        <button>✍ 글 쓰러 가기 ✍</button></a><br>
+
 
 </body>
 </html>
