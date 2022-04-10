@@ -1,0 +1,36 @@
+*{
+    font-family: 'SUIT', sans-serif;
+    background-color: #91a6b9;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+p#title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+button{
+    border: 3px solid #f8b840;
+    background-color: #fbce78;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+input{
+    background-color:white;
+    border: none;
+    margin: 5px;
+}
+
+textarea{
+    background-color:white;
+    border: none;
+}
+
+#input{
+    max-width: 300px;
+}

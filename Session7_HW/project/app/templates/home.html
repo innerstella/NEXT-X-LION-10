@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link href="http://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>TO DO LIST</h1>
+    <p>📢 마감 기한이 적게 남은 순으로 정렬됩니다 📢</p>
+
+
+    <div id="list">
+        <ul>
+            {% for todo in todos %}
+            <li>
+                <a href="{% url 'detail' todo.pk %}">
+                {{ todo.title }} ({{ todo.duedate }})</a>
+            </li> 
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="{% url 'new' %}"><button>+</button></a>
+
+    </center>
+</body>
+</html>

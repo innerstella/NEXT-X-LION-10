@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'edit.css' %}">
+    <link href="http://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <p id="title">수정</p>
+    
+    <form action="" method="post">
+        {% csrf_token %} 
+        <div>
+            <label for="title">📌 할 일</label>
+            <input type="text" name="title" id="title" value="{{ todo.title }}">
+        </div>
+        <div>
+            <label for="content">⌚ 마감일</label>
+            <input type="date" name="duedate" id="duedate" default="{{ todo.duedate }}">
+            <p id="notice">※ 마감일을 다시 지정해주세요 ※</p>
+        </div>
+        <div>
+            <textarea name="content" id="content" cols="30" rows="10">{{ todo.content }}</textarea>
+        </div>
+        <button type="submit">수정하기</button>
+    </form>
+    </center>
+</body>
+</html>
