@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <meta charset="UTF-8">
+    <link href="http://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <p id="title">영화 기록장</p>
+    <div id="list">
+        {% if not posts %}
+        <p>게시글 없음</p>
+        {% endif %}
+
+        {% for post in posts %}
+        <li>
+            <a href= "{% url 'detail' post.pk %}">{{ post.title }}</a>
+        </li>
+        {%	endfor %}
+    </div>
+    <br>
+    <div id="button">
+    <a href="{% url 'new' %}"><button>후기 작성</button></a></div>
+</center>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+    <meta charset="UTF-8">
+    <link href="http://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상세 페이지</title>
+</head>
+
+<body>
+<center>
+    <div id="container">
+        <p id="name">영화 제목</p>
+        <p>{{ post.title }}</p>
+   
+
+        <p id="name">후기</p>
+        <p id="content">{{ post.content }}</p>
+    </div>
+    <a href="{% url 'home' %}"><button>메인</button></a>
+    <a href="{% url 'edit' post.pk %}"><button>수정</button></a>
+    <a href="{% url 'delete' post.pk %}"><button>삭제</button></a>
+</center>
+</body>
+
+</html>
