@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
+    <meta charset="UTF-8">
+    <link href="http://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <p id="title">영화 기록</p>
+    <br>
+    <div id ="container">
+        <form method="POST">
+        {% csrf_token %}
+            <label for ="title">영화 제목</label>
+            <br><br>
+            <input id ="title" name="title"/>
+            <br><br><br>
+            <label for="content">후기</label>
+            <br><br>
+            <textarea id="content" name="content">
+            </textarea>
+            <br>
+            <button type="submit">작성</button>
+        </form>
+    </div>
+</center>
+</body>
+</html>
