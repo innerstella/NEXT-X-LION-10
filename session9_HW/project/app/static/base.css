@@ -10,21 +10,3 @@ body{
     text-decoration: none;
     color: black;
 }
-p#title {
-    font-size: 30px;
-    font-weight:700;
-    position:relative;
-    top : 30px;
-}
-#container{
-    position:relative;
-    top : 30px;
-}
-button{
-    background-color:rgb(252, 230, 95);
-    border-style: none;
-    padding: 4px 10px;
-    font-weight:500;
-    position:relative;
-    top : 80px;
-}

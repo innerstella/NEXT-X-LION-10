@@ -14,12 +14,13 @@ p#title {
     font-size: 30px;
     font-weight:700;
     position:relative;
-    top : 30px;
+    top : 70px;
 }
 
 #list{
     position:relative;
-    top : 50px;
+    top : 70px;
+    font-size: 15px;
 }
 #button{
     position:relative;
@@ -29,6 +30,6 @@ p#title {
 button{
     background-color:rgb(252, 230, 95);
     border-style: none;
-    padding: 7px 10px;
+    padding: 4px 10px;
     font-weight:500;
 }

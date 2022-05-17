@@ -12,18 +12,36 @@
 </head>
 
 <body>
-<center>
+
     <div id="container">
         <p id="name">영화 제목</p>
-        <p>{{ post.title }}</p>
+        <p id="title">{{ post.title }}</p>
    
 
         <p id="name">후기</p>
         <p id="content">{{ post.content }}</p>
     </div>
+<center>
+    <div class="comment">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" class="comment" name="comment" placeholder="댓글 입력">
+            <button class="comment" type="submit">작성</button>
+        </form>    
+    </div>
+    <div class ='commentList'>
+    {% for comment in post.comments.all %}
+    <li>
+        {{ comment.content}}<a href="{% url 'delete-comment' post.pk comment.pk %}">❌</a>
+    </li>  
+
+    {% endfor %}
+    </div>
+    <div id="button">
     <a href="{% url 'home' %}"><button>메인</button></a>
     <a href="{% url 'edit' post.pk %}"><button>수정</button></a>
     <a href="{% url 'delete' post.pk %}"><button>삭제</button></a>
+    </div>
 </center>
 </body>
 
