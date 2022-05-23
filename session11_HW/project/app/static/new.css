@@ -1,0 +1,12 @@
+form{
+    position:relative;
+    top: 100px;
+}
+
+input{
+    background-color: white;
+}
+
+textarea{
+    background-color: white;
+}

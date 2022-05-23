@@ -1,0 +1,17 @@
+p{
+    position:relative;
+    top: 50px;
+    left: 80px;
+    font-size: 25px;
+    font-weight: 700;
+    color:brown;
+}
+
+ul{
+    position:relative;
+    top: 0px;
+    left: 150px;
+    font-size: 17px;
+    text-decoration-color:rgb(0, 0, 0);
+    text-decoration: none;
+}

@@ -1,0 +1,26 @@
+*{
+    font-family: 'SUIT', sans-serif;
+    background-color:antiquewhite;
+    text-decoration: none;
+
+}
+
+span#nav{
+    color: brown;
+}
+
+#nav{
+    display: flex;
+    position: relative;
+    top: 10px;
+    justify-content:space-around;
+    align-items: center;
+}
+
+span#hello{
+    color: rgb(107, 60, 60);
+    font-weight: 300;
+    position: relative;
+    top:10px;
+    left: 50px;
+}

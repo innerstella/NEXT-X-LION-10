@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
+{% endblock %}
+
+
+{% block edit %}
+<center>
+<div id="edit">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="title">제목</label>
+            <input type="text" name="title" id="title" value = "{{ post.title}}">
+        </div>
+        <div>
+            <label for="lyrics">가사</label>
+            <textarea name="lyrics" id="lyrics" cols="30" rows="10">{{post.content}}</textarea>
+        </div>
+        <button type="submit">수정</button>
+    </form>
+</div>
+</center>
+{% endblock %}

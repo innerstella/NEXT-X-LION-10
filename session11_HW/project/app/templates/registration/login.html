@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+{% endblock css%}
+
+
+{% block content %}
+<center>
+<div id="signup">
+<section id="signup">
+    <form method="POST">
+        {% csrf_token %}{% if error %} 
+        <p>{{error}}</p>
+        {% endif %}
+        <input type="text" name="username" placeholder="ID"/>
+        <input type="password" name="password" placeholder="PW"/>
+        <button>로그인</button>
+    </form>
+</section>
+</div>
+</center>
+{% endblock %}
