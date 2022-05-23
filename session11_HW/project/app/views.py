@@ -87,7 +87,9 @@ def login(request):
         password = request.POST['password']
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
-            auth.login(request, user)
+            auth.login(
+                request, user, backend='django.contrib.auth.backends.ModelBackend'
+            )
             # return redirect('home')
             return redirect(request.GET.get('next', '/'))
         error = '아이디 또는 비밀번호가 틀립니다'

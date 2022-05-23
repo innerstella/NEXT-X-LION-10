@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
+    {% load static %} {% load socialaccount %} {% providers_media_js %}
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +27,7 @@
         <!-- <a href="{% url 'new' %}"><span id="nav">추가</span></a> -->
         <a href="{% url 'signup' %}"><span id="nav">회원가입</span></a>
         <a href="{% url 'login' %}"><span id="nav">로그인</span></a>
+        <a href="{% provider_login_url 'kakao' %}"><span id="nav">카카오 로그인</span></a>
         <!-- <a href="{% url 'logout' %}"><span id="nav">로그아웃</span></a> -->
         {% endif %}
         <br>

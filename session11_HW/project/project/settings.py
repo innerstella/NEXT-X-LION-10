@@ -38,7 +38,26 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.kakao',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+
+# SOCIALACCOUNT_PROVIDERS = {
+#     'kakao': {
+#         'APP': {
+#             'client_id': 'eb88b1a97a1d6f3bc8519974b4edbe91',
+#             'secret': 'HmektmX1bcax2sLn20PdFqjIga1IjOUw',
+#             'key': ''
+#         }
+#     }
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
