@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+  좋아요 누른 글
+  <div>
+    {% for like in user.likes.all %}
+    <p>{{like.post.title}}</p>
+    {% endfor %}
+  </div>
+</div>
+<div>
+  찜하기 누른 글
+  <div>
+    {% for scrap in user.scraps.all %}
+    <p>{{scrap.post.title}}</p>
+    {% endfor %}
+  </div>
+  {% endblock content %}
+</div>

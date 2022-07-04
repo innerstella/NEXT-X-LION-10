@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+  <div>
+    <div class="post_title">{{ post.title }}</div>
+    <div class="post_content">{{ post.content }}</div>
+  </div>
+  <a href="{% url 'home' %}">홈으로</a>
+
+  {% if user.is_authenticated and post.author.pk == user.pk %}
+  <a href="{% url 'edit' post.pk %}">수정하기</a>
+  <a href="{% url 'delete' post.pk %}">삭제하기</a>
+  {% endif %} {% for comment in post.comments.all %}
+  <li>{{ comment.content }}</li>
+  {% if user.is_authenticated and comment.author.pk == user.pk %}
+  <a href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>
+  {% endif %} {% endfor %} {% if user.is_authenticated %}
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="content" placeholder="댓글을 입력하세요" />
+    <button style="background-color: black; color: white" type="submit">
+      댓글 쓰기
+    </button>
+  </form>
+  {% endif %}
+  <!-- 좋아요 -->
+  <button
+    id="like-button"
+    style="background-color: black; color: white"
+    onclick="likeBtnClicked()"
+  >
+    좋아요
+  </button>
+  <div>좋아요 {{post.likes.count}}개</div>
+
+  <!--스크랩-->
+  <button
+    id="scrap-button"
+    style="background-color: black; color: white"
+    onclick="scrapBtnClicked()"
+  >
+    스크랩
+  </button>
+  <div>스크랩 {{post.scraps.count}}개</div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  const likeBtn = document.getElementById("like-button");
+  const scrapBtn = document.getElementById("scrap-button");
+
+  const likeBtnClicked = async () => {
+    let auth = "{{request.user.is_authenticated}}";
+    if (auth === "True") {
+      likeClick();
+    } else {
+      alert("로그인하세요");
+    }
+  };
+
+  const likeClick = async () => {
+    console.log("클릭");
+    const res = await axios.post("/like", { post_pk: "{{post.pk}}" });
+    document.getElementById("like_count").innerHTML =
+      res.data.like_count + "개" + res.data.user_like;
+    console.log(res.user_like);
+    if (res.user_like === 1) {
+      likeBtn.style.backgroundColor = "red";
+    } else {
+      likeBtn.style.backgroundColor = "black";
+    }
+  };
+
+  const scrapBtnClicked = async () => {
+    let auth = "{{request.user.is_authenticated}}";
+    if (auth === "True") {
+      scrapClick();
+    } else {
+      alert("로그인하세요");
+    }
+  };
+
+  const scrapClick = async () => {
+    const res = await axios.post("/scrap", { post_pk: "{{post.pk}}" });
+    document.getElementById("scrap_count").innerHTML =
+      res.data.scrap_count + "개";
+  };
+</script>
+
+{% endblock content %}
